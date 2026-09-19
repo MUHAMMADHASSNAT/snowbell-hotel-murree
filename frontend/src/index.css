@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --color-navy: #0f1c2e;
+  --color-navy-mid: #1a2d47;
+  --color-gold: #c4a574;
+  --color-gold-soft: #d8c4a3;
+  --color-cream: #f4f0ea;
+  --color-ink: #243044;
+  --color-muted: #5c6778;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #fff;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-navy);
+}
+
+.input {
+  @apply w-full rounded-md border border-navy/15 bg-white px-3 py-2.5 text-sm text-navy outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/25;
+}
+
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-gold px-5 py-2.5 text-sm font-semibold tracking-wide text-navy transition hover:bg-gold-soft;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-navy/20 bg-transparent px-5 py-2.5 text-sm font-semibold text-navy transition hover:border-gold hover:text-navy-mid;
+}
+
+.btn-navy {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-mid;
+}
+
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
